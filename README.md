@@ -24,12 +24,12 @@ In which the *Ending Value* is the closing price for the last day of the year, a
 #### 2017
 In 2017, green energy companies mostly had positive returns - only one of the twelve we analyzed had negative returns, Terraform Power, with a 7.2% decrease.  The other companies ranged from SunRun's 5.5% increase to Daqo's 199.4% increase.  Our full results, including the formatting, are pictured below:
 
-![A table depicting the ticker, total trade volume, and yearly return for 12 green energy companies in 2017](2017_Results.png)
+![A table depicting the ticker, total trade volume, and yearly return for 12 green energy companies in 2017](2017_Results.PNG)
 
 #### 2018
 2018 was a significantly less successful year than 2017, with only two companies yielding positive returns.  Enphase, with 81.4% returns, and SunRun, with 84.0% returns, had strong showings, while the other companies ranged from Antlantica's -7.4% returns to Daqo's -62.6% returns.  The full results for 2018 are shown below:
 
-![A table depicting the ticker, total trade volume, and yearly returns for 12 green energy companies in 2018](2018_Results.png)
+![A table depicting the ticker, total trade volume, and yearly returns for 12 green energy companies in 2018](2018_Results.PNG)
 
 #### Year to Year Comparison
 Both Sunrun and Enphase had dramatic increases in trade volume, with Sunrun increasing by 88% and Enphase increasing by 174% yearly trade volume.  Daqo's trade volume also increased significantly, nearly tripling with a 201% increase in volume despite their poor returns.  Interestingly, Terraform Power also showed an increase in trade volume, despite consistently negative yearly returns.  The other companies had less dramatic changes in volume, with some increasing and some decreasing.  With the data available to us, we do not have enough information to determine what caused these companies returns to decrease as they did.
@@ -53,9 +53,9 @@ Our [original code](year_value_analysis.vbs) utilized a nested for-loop to itera
 ```
 It's easy to see how increasing the number of companies to analyze would increase both the number of rows and the number of tickers, leading to increasingly frustrating runtimes.  With the 12 companies used for this project, our runtime was around 0.515625 seconds for 2017 and 0.5859375 seconds for 2018, as captured in the screenshots below:
 
-![2017 old code runtime](RunTime_2017_1.png)
+![2017 old code runtime](RunTime_2017_1.PNG)
 
-![2018 old code runtime](RunTime_2018_1.png)
+![2018 old code runtime](RunTime_2018_1.PNG)
 
 With the [new code](VBA_Challenge.vbs), we removed the need for nested for loops by introducing arrays to contain the starting value, the ending value, and the total volume for each ticker.  
 ```
@@ -90,9 +90,9 @@ For i = 2 To RowCount
 ```
 With this change, our runtimes decreased to 0.0546875 seconds for 2017 and 0.078125 seconds for 2018, as shown below:
 
-![runtime for 2017 with refactored code](VBA_Challenge_2017.png)
+![runtime for 2017 with refactored code](VBA_Challenge_2017.PNG)
 
-![runtime for 2018 with refactored code](VBA_Challenge_2018.png)
+![runtime for 2018 with refactored code](VBA_Challenge_2018.PNG)
 
 ## Summary
 
