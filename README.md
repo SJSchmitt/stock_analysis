@@ -51,7 +51,7 @@ Our [original code](year_value_analysis.vbs) utilized a nested for-loop to itera
         Next j
     Next i
 ```
-It's easy to see how increasing the number of companies to analyze would increase both the number of rows and the number of tickers, leading to increasingly frustrating runtimes.  With the 12 companies used for this project, our runtime was around 0.515625 seconds for 2017 and 0.5859375 seconds for 2018, as captured in the screenshots below:
+It's easy to see how increasing the number of companies to analyze would increase both the number of rows and the number of tickers, leading to increasingly frustrating runtimes.  With the 12 companies used for this project, our runtime was around 0.516 seconds for 2017 and 0.492 seconds for 2018, as captured in the screenshots below:
 
 ![2017 old code runtime](RunTime_2017_1.PNG)
 
@@ -88,7 +88,7 @@ For i = 2 To RowCount
     
     Next i
 ```
-With this change, our runtimes decreased to 0.0546875 seconds for 2017 and 0.078125 seconds for 2018, as shown below:
+With this change, our runtimes decreased to 0.055 seconds for 2017 and 0.078 seconds for 2018, as shown below:
 
 ![runtime for 2017 with refactored code](VBA_Challenge_2017.PNG)
 
@@ -97,6 +97,6 @@ With this change, our runtimes decreased to 0.0546875 seconds for 2017 and 0.078
 ## Summary
 
 ### Pros and Cons of Refactoring
-Broadly speaking, refactoring is usually done to make code easier to read or more efficient to run.  Often, the first code we write isn't the best it could be, because it's easier to figure out what works and go from there than to worry about being perfect right off the bat.  However, refactoring has an upfront time cost, and for instances where runtime is small or the code is rarely used, it may not be worth that time to make it more efficient.  When working on larger coding projects than this, one also has to make sure that refactoring one section doesn't interfere with how other sections of the code run, or that it's feasible to adjust those other sections as well.
+Broadly speaking, refactoring is usually done to make code easier to read, more efficient to run, or to allow for broadening the scope of a program.  Often, the first code we write isn't the best it could be, because it's easier to figure out what works and go from there than to worry about being perfect right off the bat.  However, refactoring has an upfront time cost, and for instances where runtime is small or the code is rarely used, it may not be worth that time to make it more efficient.  When working on larger coding projects than this, one also has to make sure that refactoring one section doesn't interfere with how other sections of the code run, or that it's feasible to adjust those other sections as well.
 
 In the case of this project, our original code used less memory, as it was creating and storing objects instead of arrays.  However, the refactored code runs significantly faster, a difference that would only grow more noticeable as the data set increased in size.  Our original code was also faster and easier to write, saving time up front.  For the small data set we were working with, the fractions of a second we saved on runtime probably wouldn't warrant the effort to refactor, but the refactor allows us to use the same script for grander analyses in the future.
